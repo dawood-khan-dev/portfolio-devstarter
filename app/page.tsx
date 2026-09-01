@@ -8,8 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Github,
   Linkedin,
@@ -129,7 +127,7 @@ export default function Home() {
             href="#projects"
             className="hover:text-primary transition-colors"
           >
-            Projects
+            Work
           </Link>
           <Link href="#skills" className="hover:text-primary transition-colors">
             Skills
@@ -144,12 +142,15 @@ export default function Home() {
             Contact
           </Link>
         </nav>
-        <Button
-          variant="outline"
-          className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary"
+        <Link
+          href="mailto:hello@khan.life"
+          className={cn(
+            "font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary",
+            buttonVariants({ variant: "outline" })
+          )}
         >
-          resume_v4.pdf
-        </Button>
+          Let&apos;s Talk <ArrowRight className="size-3" />
+        </Link>
       </Container>
 
       {/* Hero Section */}
@@ -196,7 +197,9 @@ export default function Home() {
               </Link>
               <div className="flex gap-2">
                 <Link
-                  href="#"
+                  href="https://github.com/dawood-khan-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
@@ -204,7 +207,9 @@ export default function Home() {
                   <Github className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/thedawoodkhan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
@@ -212,7 +217,7 @@ export default function Home() {
                   <Linkedin className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="mailto:hello@khan.life"
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" })
                   )}
@@ -423,53 +428,20 @@ export default function Home() {
       </Container>
       {/* Contact Section */}
       <Container id="contact" className="py-24 bg-card border-t border-border">
-        <div className="max-w-2xl justify-self-center">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-display mb-4">INITIATE_CONTACT</h2>
-            <p className="text-muted-foreground">
-              Have a project in mind or just want to discuss the singularity?
-              Send a signal.
-            </p>
-          </div>
-
-          <form className="grid gap-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  NAME
-                </label>
-                <Input id="name" placeholder="John Doe" />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  EMAIL
-                </label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label
-                htmlFor="message"
-                className="text-xs font-mono text-muted-foreground"
-              >
-                MESSAGE
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Enter your message..."
-                className="min-h-[150px]"
-              />
-            </div>
-            <Button type="submit" className="w-full" size="lg">
-              SEND TRANSMISSION
-            </Button>
-          </form>
+        <div className="max-w-2xl justify-self-center text-center space-y-6">
+          <h2 className="text-4xl font-display text-balance">
+            Have a SaaS idea or need help building your product?
+          </h2>
+          <p className="text-muted-foreground">
+            I&apos;m available for selected freelance projects involving SaaS
+            development and modern web applications.
+          </p>
+          <Link
+            href="mailto:hello@khan.life"
+            className={cn("uppercase", buttonVariants({ size: "lg" }))}
+          >
+            Let&apos;s talk <ArrowRight className="size-4" />
+          </Link>
         </div>
       </Container>
       {/* Footer */}
@@ -482,14 +454,21 @@ export default function Home() {
             © {new Date().getFullYear()} DAWOOD KHAN. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="https://github.com/dawood-khan-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               GITHUB
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="https://www.linkedin.com/in/thedawoodkhan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               LINKEDIN
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              TWITTER
             </Link>
           </div>
         </div>
