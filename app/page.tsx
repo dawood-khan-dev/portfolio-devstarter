@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -70,30 +70,6 @@ export default function Home() {
     },
   ];
 
-  const blogPosts = [
-    {
-      title: "Optimizing React Render Cycles in High-Frequency Data Apps",
-      date: "Oct 12, 2024",
-      readTime: "5 min read",
-      excerpt:
-        "Deep dive into memoization strategies and custom hooks for handling 100+ updates per second.",
-    },
-    {
-      title: "The State of WebAssembly in 2024",
-      date: "Sep 28, 2024",
-      readTime: "8 min read",
-      excerpt:
-        "Is WASM ready to replace JavaScript for heavy compute tasks? A performance benchmark.",
-    },
-    {
-      title: "Building a Custom Kubernetes Operator with Go",
-      date: "Aug 15, 2024",
-      readTime: "12 min read",
-      excerpt:
-        "Automating stateful application management using the Operator pattern.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
       {/* Navigation / Header */}
@@ -129,11 +105,17 @@ export default function Home() {
           >
             Work
           </Link>
-          <Link href="#skills" className="hover:text-primary transition-colors">
-            Skills
+          <Link
+            href="#what-i-do"
+            className="hover:text-primary transition-colors"
+          >
+            What I Do
           </Link>
-          <Link href="#blog" className="hover:text-primary transition-colors">
-            Logs
+          <Link href="#about" className="hover:text-primary transition-colors">
+            About
+          </Link>
+          <Link href="#skills" className="hover:text-primary transition-colors">
+            Technology
           </Link>
           <Link
             href="#contact"
@@ -275,7 +257,7 @@ export default function Home() {
       >
         <div className="grid justify-between items-end mb-16 gap-4">
           <div>
-            <h2 className="text-4xl md:text-6xl font-display tracking-tighter mb-4">
+            <h2 className="text-4xl font-display tracking-tighter mb-4">
               SELECTED
               <br />
               WORKS
@@ -336,6 +318,35 @@ export default function Home() {
           ))}
         </div>
       </Container>
+      {/* What I Do Section */}
+      <Container
+        id="what-i-do"
+        component="section"
+        wrapperClassName="py-24 bg-secondary/20 border-t border-border"
+        className="mx-auto max-w-7xl flex-1"
+      >
+        <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+          What I Do
+        </h2>
+        <p className="text-muted-foreground max-w-2xl">
+          Placeholder copy for the What I Do section. Replace with a summary
+          of the services offered.
+        </p>
+      </Container>
+      {/* About Section */}
+      <Container
+        id="about"
+        component="section"
+        wrapperClassName="py-24 border-t border-border"
+        className="mx-auto max-w-7xl flex-1"
+      >
+        <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+          About
+        </h2>
+        <p className="text-muted-foreground max-w-2xl">
+          Placeholder copy for the About section. Replace with a short bio.
+        </p>
+      </Container>
       {/* Skills Matrix */}
       <Container
         id="skills"
@@ -345,8 +356,8 @@ export default function Home() {
       >
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <h2 className="text-4xl font-display tracking-tighter mb-6">
-              TECH_STACK
+            <h2 className="text-4xl font-display tracking-tighter mb-6 uppercase">
+              Technology
             </h2>
             <p className="text-muted-foreground mb-8">
               My preferred weapons of choice for building digital products.
@@ -394,36 +405,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </Container>
-      {/* Blog Section */}
-      <Container
-        id="blog"
-        className="py-24 border-t border-border max-w-7xl mx-auto"
-      >
-        <h2 className="text-4xl font-display mb-12 uppercase">Transmissions</h2>
-
-        <div className="grid gap-8">
-          {blogPosts.map((post, index) => (
-            <Link href="#" key={index} className="group">
-              <div className="grid gap-4 md:grid-cols-[1fr_auto] items-baseline justify-between mb-2">
-                <h3 className="text-2xl font-display group-hover:text-primary transition-colors text-balance">
-                  {post.title}
-                </h3>
-                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
-                  {post.date} // {post.readTime}
-                </span>
-              </div>
-              <p className="text-muted-foreground mb-4 max-w-2xl">
-                {post.excerpt}
-              </p>
-              <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline">VIEW ALL POSTS</Button>
         </div>
       </Container>
       {/* Contact Section */}
