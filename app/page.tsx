@@ -157,25 +157,34 @@ export default function Home() {
               </span>
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
-            <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
-              FULL
-              <br />
-              STACK
-              <br />
+            <h1 className="text-4xl md:text-6xl font-display tracking-tight leading-tight text-balance">
+              I build{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
-                DEV_
-              </span>
+                SaaS products
+              </span>{" "}
+              from idea to production.
             </h1>
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
-              I build SaaS products and modern web applications with Next.js,
-              React, TypeScript and Node.js.
+              I&apos;m Dawood Khan, a full-stack developer specializing in
+              Next.js, React, TypeScript and Node.js. I build and ship SaaS
+              products, business applications and modern web experiences
+              end-to-end.
             </p>
-            <div className="flex gap-4 pt-4 items-center">
+            <div className="flex flex-wrap gap-4 pt-4 items-center">
               <Link
                 href="#projects"
                 className={cn("uppercase", buttonVariants({ size: "lg" }))}
               >
-                View projects <ArrowRight className="size-4" />
+                View my work <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href="mailto:hello@khan.life"
+                className={cn(
+                  "uppercase",
+                  buttonVariants({ variant: "outline", size: "lg" })
+                )}
+              >
+                Let&apos;s talk
               </Link>
               <div className="flex gap-2">
                 <Link
