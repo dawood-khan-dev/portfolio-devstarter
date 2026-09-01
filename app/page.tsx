@@ -27,31 +27,45 @@ import { ProjectImage } from "@/components/project-image";
 export default function Home() {
   const projects = [
     {
-      title: "Nebula Dashboard",
+      title: "EventDesk",
       description:
-        "Real-time analytics platform for distributed systems. Built with React, WebSocket, and Go.",
-      tags: ["React", "Go", "WebSocket", "D3.js"],
-      image: "/project-placeholder-1.jpg",
-      link: "#",
-      repo: "#",
+        "An all-in-one SaaS platform for in-person event planners, combining task management, budgets, CRM, invoices, expenses and event operations in one place.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      image: "/eventdesk_dashboard.png",
+      link: "https://app.eventdesk.io",
+      repo: "https://github.com/dawood-khan-dev/eventdesk",
     },
     {
-      title: "Void Chain",
+      title: "PaintMyHome",
       description:
-        "Decentralized identity verification protocol. Smart contracts written in Solidity.",
-      tags: ["Solidity", "Ethereum", "Web3.js", "Node.js"],
+        "A modern marketing and lead-generation website for home painting services, designed around search-driven acquisition, painting-cost discovery and quote generation.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn",
+        "Basehub",
+      ],
+      image: "/paintmyhome_screenshot.png",
+      link: "https://paintmyhome.in",
+      repo: "https://github.com/dawood-khan-dev/paintmyhome_v0.1",
+    },
+    {
+      title: "Multi-Tenant PostgreSQL RLS",
+      description:
+        "An open-source PostgreSQL library for implementing secure multi-tenant data isolation with Row-Level Security (RLS), designed for SaaS applications using Prisma.",
+      tags: ["PostgreSQL", "RLS", "Multi-Tenancy", "Prisma", "Open Source"],
       image: "/project-placeholder-2.jpg",
-      link: "#",
-      repo: "#",
-    },
-    {
-      title: "Cyber Construct",
-      description:
-        "3D architectural visualization tool running in the browser using WebGL.",
-      tags: ["Three.js", "WebGL", "Vue", "Python"],
-      image: "/project-placeholder-3.jpg",
-      link: "#",
-      repo: "#",
+      link: null,
+      repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
     },
   ];
 
@@ -78,7 +92,10 @@ export default function Home() {
         wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
         className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
       >
-        <div className="flex items-center gap-2 text-3xl font-bold font-mono tracking-tighter">
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-3xl font-bold font-mono tracking-tighter"
+        >
           <span
             role="img"
             aria-label="Logo"
@@ -97,7 +114,7 @@ export default function Home() {
           <span>
             Dawood<span className="text-primary">_</span>Khan
           </span>
-        </div>
+        </Link>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
           <Link
             href="#projects"
@@ -128,7 +145,7 @@ export default function Home() {
           href="mailto:hello@khan.life"
           className={cn(
             "font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary",
-            buttonVariants({ variant: "outline" })
+            buttonVariants({ variant: "outline" }),
           )}
         >
           Let&apos;s Talk <ArrowRight className="size-3" />
@@ -181,7 +198,7 @@ export default function Home() {
                 href="mailto:hello@khan.life"
                 className={cn(
                   "uppercase",
-                  buttonVariants({ variant: "outline", size: "lg" })
+                  buttonVariants({ variant: "outline", size: "lg" }),
                 )}
               >
                 Let&apos;s talk
@@ -192,7 +209,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Github className="h-5 w-5" />
@@ -202,7 +219,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Linkedin className="h-5 w-5" />
@@ -210,7 +227,7 @@ export default function Home() {
                 <Link
                   href="mailto:hello@khan.life"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Mail className="h-5 w-5" />
@@ -274,8 +291,8 @@ export default function Home() {
             <div className="h-1 w-24 bg-primary"></div>
           </div>
           <p className="text-muted-foreground max-w-sm text-left">
-            A collection of experiments, production apps, and open source
-            contributions.
+            A selection of products and engineering projects I&apos;ve designed,
+            built and shipped — including open-source work.
           </p>
         </div>
 
@@ -309,15 +326,26 @@ export default function Home() {
                   </CardDescription>
                 </CardContent>
               </div>
-              <CardFooter className="flex justify-between pt-0">
-                <Link
-                  href={project.link}
-                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
-                >
-                  LIVE DEMO <ExternalLink className="size-3" />
-                </Link>
+              <CardFooter
+                className={cn(
+                  "flex pt-0",
+                  project.link ? "justify-between" : "justify-end"
+                )}
+              >
+                {project.link && (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
+                  >
+                    LIVE DEMO <ExternalLink className="size-3" />
+                  </Link>
+                )}
                 <Link
                   href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
                   CODE <Github className="size-3" />
@@ -338,8 +366,8 @@ export default function Home() {
           What I Do
         </h2>
         <p className="text-muted-foreground max-w-2xl">
-          Placeholder copy for the What I Do section. Replace with a summary
-          of the services offered.
+          Placeholder copy for the What I Do section. Replace with a summary of
+          the services offered.
         </p>
       </Container>
       {/* About Section */}
