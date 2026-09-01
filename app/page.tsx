@@ -104,8 +104,25 @@ export default function Home() {
         wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
         className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
       >
-        <div className="text-xl font-bold font-mono tracking-tighter">
-          Marcus<span className="text-primary">_</span>Chen
+        <div className="flex items-center gap-2 text-3xl font-bold font-mono tracking-tighter">
+          <span
+            role="img"
+            aria-label="Logo"
+            className="inline-block h-6 aspect-2436/1216 bg-foreground"
+            style={{
+              WebkitMaskImage: "url(/logo.svg)",
+              maskImage: "url(/logo.svg)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+              WebkitMaskPosition: "center",
+              maskPosition: "center",
+            }}
+          />
+          <span>
+            Dawood<span className="text-primary">_</span>Khan
+          </span>
         </div>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
           <Link
@@ -167,9 +184,8 @@ export default function Home() {
               </span>
             </h1>
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
-              Architecting digital voids and crafting high-performance web
-              experiences. Specialized in scalable distributed systems and
-              interactive 3D interfaces.
+              I build SaaS products and modern web applications with Next.js,
+              React, TypeScript and Node.js.
             </p>
             <div className="flex gap-4 pt-4 items-center">
               <Link
@@ -463,7 +479,7 @@ export default function Home() {
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-xs font-mono text-muted-foreground">
-            © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} DAWOOD KHAN. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6 text-xs font-mono text-muted-foreground">
             <Link href="#" className="hover:text-primary transition-colors">

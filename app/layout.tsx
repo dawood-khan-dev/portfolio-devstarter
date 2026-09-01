@@ -20,9 +20,9 @@ const siteUrl =
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000";
 
-const title = "Dev Starter by Zippystarter";
+const title = "Dawood Khan — Full-Stack SaaS Developer";
 const description =
-  "Dev Starter is an open source, one page developer portfolio template.";
+  "I build SaaS products and modern web applications with Next.js, React, TypeScript and Node.js.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
