@@ -351,7 +351,7 @@ export default function Home() {
               <CardFooter
                 className={cn(
                   "flex pt-0",
-                  project.link ? "justify-between" : "justify-end"
+                  project.link ? "justify-between" : "justify-end",
                 )}
               >
                 {project.link && (
@@ -419,9 +419,36 @@ export default function Home() {
         <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
           About
         </h2>
-        <p className="text-muted-foreground max-w-2xl">
-          Placeholder copy for the About section. Replace with a short bio.
-        </p>
+        <div className="max-w-3xl space-y-4 text-muted-foreground">
+          <p>
+            I&apos;m Dawood Khan, a software engineer and product builder based
+            in India, with 10+ years of experience building software.
+          </p>
+          <p>
+            Today, I focus on building SaaS products and modern web
+            applications, working across the stack from product architecture and
+            database design to frontend, backend and deployment.
+          </p>
+          <p>
+            I&apos;ve built products end-to-end, including{" "}
+            <strong className="text-foreground font-semibold">EventDesk</strong>
+            , an all-in-one SaaS platform for in-person event planners, and{" "}
+            <strong className="text-foreground font-semibold">
+              PaintMyHome
+            </strong>
+            , a marketing and lead-generation website built for an actual
+            business.
+          </p>
+          <p>
+            I enjoy working with founders and teams to turn ideas into working
+            products, whether that&apos;s an MVP, a new SaaS product, or a
+            feature that needs to be designed and engineered properly.
+          </p>
+          <p className="text-foreground font-semibold">
+            Currently available for selected freelance SaaS and web development
+            projects.
+          </p>
+        </div>
       </Container>
       {/* Skills Matrix */}
       <Container
