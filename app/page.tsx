@@ -17,6 +17,7 @@ import {
   Terminal,
   Database,
   Cpu,
+  Layers,
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
@@ -66,6 +67,27 @@ export default function Home() {
       image: "/project-placeholder-2.jpg",
       link: null,
       repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
+    },
+  ];
+
+  const whatIDo = [
+    {
+      icon: Layers,
+      title: "SaaS Development",
+      description:
+        "Build and evolve SaaS products end-to-end — from startup MVPs and initial architecture to new features, integrations and production deployments.",
+    },
+    {
+      icon: Code2,
+      title: "Full-Stack Web Development",
+      description:
+        "Build modern, responsive web applications and business platforms with Next.js, React, TypeScript and Node.js.",
+    },
+    {
+      icon: Cpu,
+      title: "Product Engineering",
+      description:
+        "Solve complex product and engineering problems — from architecture and data modeling to integrations, performance and evolving existing applications.",
     },
   ];
 
@@ -365,10 +387,27 @@ export default function Home() {
         <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
           What I Do
         </h2>
-        <p className="text-muted-foreground max-w-2xl">
-          Placeholder copy for the What I Do section. Replace with a summary of
-          the services offered.
-        </p>
+
+        <div className="grid gap-6 sm:grid-cols-3 mt-12">
+          {whatIDo.map((item, index) => (
+            <Card
+              key={index}
+              className="bg-card border-border hover:border-primary/50 transition-colors duration-300 rounded-none"
+            >
+              <CardHeader className="flex flex-row items-center gap-3">
+                <item.icon className="h-6 w-6 text-primary shrink-0" />
+                <CardTitle className="text-xl font-display">
+                  {item.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </Container>
       {/* About Section */}
       <Container
