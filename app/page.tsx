@@ -14,10 +14,12 @@ import {
   Mail,
   ExternalLink,
   Code2,
-  Terminal,
-  Database,
   Cpu,
   Layers,
+  Layers3,
+  Network,
+  ShieldCheck,
+  Rocket,
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
@@ -91,18 +93,51 @@ export default function Home() {
     },
   ];
 
+  const techHighlights = [
+    {
+      icon: Layers3,
+      title: "FULL-STACK",
+      description:
+        "From frontend interfaces to APIs, databases and server-side logic.",
+    },
+    {
+      icon: Network,
+      title: "SAAS ARCHITECTURE",
+      description:
+        "Multi-tenancy, authentication, authorization, data modeling and business workflows.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "PRODUCTION READY",
+      description:
+        "Performance, reliability, observability and maintainable code built for real-world use.",
+    },
+    {
+      icon: Rocket,
+      title: "SHIP & OPERATE",
+      description:
+        "Deployment, CI/CD, environments and infrastructure from development to production.",
+    },
+  ];
+
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Tailwind CSS", "Three.js", "Next.js"],
+      items: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive UI",
+      ],
     },
     {
       category: "Backend",
-      items: ["Node.js", "Go", "PostgreSQL", "Redis", "Docker"],
+      items: ["Node.js", "PostgreSQL", "Prisma", "REST APIs", "Typescript"],
     },
     {
-      category: "Tools",
-      items: ["Git", "Linux", "AWS", "Kubernetes", "Figma"],
+      category: "Integrations",
+      items: ["Clerk", "Stripe", "PostHog", "Resend", "Better Stack"],
     },
   ];
 
@@ -463,26 +498,24 @@ export default function Home() {
               Technology
             </h2>
             <p className="text-muted-foreground mb-8">
-              My preferred weapons of choice for building digital products.
-              Always learning, always evolving.
+              The technologies I use to turn ideas into reliable,
+              production-ready digital products.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Code2 className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">CLEAN_CODE</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Database className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">SCALABLE_DB</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Cpu className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">PERFORMANCE</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Terminal className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">DEVOPS</span>
-              </div>
+              {techHighlights.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-4 border border-border bg-background hover:border-primary transition-colors"
+                >
+                  <div className="flex items-start gap-2 mb-1">
+                    <item.icon className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span className="font-mono text-xs">{item.title}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground pt-1">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
