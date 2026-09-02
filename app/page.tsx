@@ -1,4 +1,4 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,17 +8,18 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Github,
   Linkedin,
   Mail,
   ExternalLink,
   Code2,
-  Terminal,
-  Database,
   Cpu,
+  Layers,
+  Layers3,
+  Network,
+  ShieldCheck,
+  Rocket,
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
@@ -29,70 +30,114 @@ import { ProjectImage } from "@/components/project-image";
 export default function Home() {
   const projects = [
     {
-      title: "Nebula Dashboard",
+      title: "EventDesk",
       description:
-        "Real-time analytics platform for distributed systems. Built with React, WebSocket, and Go.",
-      tags: ["React", "Go", "WebSocket", "D3.js"],
-      image: "/project-placeholder-1.jpg",
-      link: "#",
-      repo: "#",
+        "An all-in-one SaaS platform for in-person event planners, combining task management, budgets, CRM, invoices, expenses and event operations in one place.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Prisma",
+      ],
+      image: "/eventdesk_dashboard.png",
+      link: "https://app.eventdesk.io",
+      repo: "https://github.com/dawood-khan-dev/eventdesk",
     },
     {
-      title: "Void Chain",
+      title: "PaintMyHome",
       description:
-        "Decentralized identity verification protocol. Smart contracts written in Solidity.",
-      tags: ["Solidity", "Ethereum", "Web3.js", "Node.js"],
+        "A modern marketing and lead-generation website for home painting services, designed around search-driven acquisition, painting-cost discovery and quote generation.",
+      tags: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn",
+        "Basehub",
+      ],
+      image: "/paintmyhome_screenshot.png",
+      link: "https://paintmyhome.in",
+      repo: "https://github.com/dawood-khan-dev/paintmyhome_v0.1",
+    },
+    {
+      title: "Multi-Tenant PostgreSQL RLS",
+      description:
+        "An open-source PostgreSQL library for implementing secure multi-tenant data isolation with Row-Level Security (RLS), designed for SaaS applications using Prisma.",
+      tags: ["PostgreSQL", "RLS", "Multi-Tenancy", "Prisma", "Open Source"],
       image: "/project-placeholder-2.jpg",
-      link: "#",
-      repo: "#",
+      link: null,
+      repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
+    },
+  ];
+
+  const whatIDo = [
+    {
+      icon: Layers,
+      title: "SaaS Development",
+      description:
+        "Build and evolve SaaS products end-to-end — from startup MVPs and initial architecture to new features, integrations and production deployments.",
     },
     {
-      title: "Cyber Construct",
+      icon: Code2,
+      title: "Full-Stack Web Development",
       description:
-        "3D architectural visualization tool running in the browser using WebGL.",
-      tags: ["Three.js", "WebGL", "Vue", "Python"],
-      image: "/project-placeholder-3.jpg",
-      link: "#",
-      repo: "#",
+        "Build modern, responsive web applications and business platforms with Next.js, React, TypeScript and Node.js.",
+    },
+    {
+      icon: Cpu,
+      title: "Product Engineering",
+      description:
+        "Solve complex product and engineering problems — from architecture and data modeling to integrations, performance and evolving existing applications.",
+    },
+  ];
+
+  const techHighlights = [
+    {
+      icon: Layers3,
+      title: "FULL-STACK",
+      description:
+        "From frontend interfaces to APIs, databases and server-side logic.",
+    },
+    {
+      icon: Network,
+      title: "SAAS ARCHITECTURE",
+      description:
+        "Multi-tenancy, authentication, authorization, data modeling and business workflows.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "PRODUCTION READY",
+      description:
+        "Performance, reliability, observability and maintainable code built for real-world use.",
+    },
+    {
+      icon: Rocket,
+      title: "SHIP & OPERATE",
+      description:
+        "Deployment, CI/CD, environments and infrastructure from development to production.",
     },
   ];
 
   const skills = [
     {
       category: "Frontend",
-      items: ["React", "TypeScript", "Tailwind CSS", "Three.js", "Next.js"],
+      items: [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Responsive UI",
+      ],
     },
     {
       category: "Backend",
-      items: ["Node.js", "Go", "PostgreSQL", "Redis", "Docker"],
+      items: ["Node.js", "PostgreSQL", "Prisma", "REST APIs", "Typescript"],
     },
     {
-      category: "Tools",
-      items: ["Git", "Linux", "AWS", "Kubernetes", "Figma"],
-    },
-  ];
-
-  const blogPosts = [
-    {
-      title: "Optimizing React Render Cycles in High-Frequency Data Apps",
-      date: "Oct 12, 2024",
-      readTime: "5 min read",
-      excerpt:
-        "Deep dive into memoization strategies and custom hooks for handling 100+ updates per second.",
-    },
-    {
-      title: "The State of WebAssembly in 2024",
-      date: "Sep 28, 2024",
-      readTime: "8 min read",
-      excerpt:
-        "Is WASM ready to replace JavaScript for heavy compute tasks? A performance benchmark.",
-    },
-    {
-      title: "Building a Custom Kubernetes Operator with Go",
-      date: "Aug 15, 2024",
-      readTime: "12 min read",
-      excerpt:
-        "Automating stateful application management using the Operator pattern.",
+      category: "Integrations",
+      items: ["Clerk", "Stripe", "PostHog", "Resend", "Better Stack"],
     },
   ];
 
@@ -104,21 +149,47 @@ export default function Home() {
         wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
         className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
       >
-        <div className="text-xl font-bold font-mono tracking-tighter">
-          Marcus<span className="text-primary">_</span>Chen
-        </div>
+        <Link
+          href="/"
+          className="flex items-center gap-2 text-3xl font-bold font-mono tracking-tighter"
+        >
+          <span
+            role="img"
+            aria-label="Logo"
+            className="inline-block h-6 aspect-2436/1216 bg-foreground"
+            style={{
+              WebkitMaskImage: "url(/logo.svg)",
+              maskImage: "url(/logo.svg)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+              WebkitMaskPosition: "center",
+              maskPosition: "center",
+            }}
+          />
+          <span>
+            Dawood<span className="text-primary">_</span>Khan
+          </span>
+        </Link>
         <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
           <Link
             href="#projects"
             className="hover:text-primary transition-colors"
           >
-            Projects
+            Work
+          </Link>
+          <Link
+            href="#what-i-do"
+            className="hover:text-primary transition-colors"
+          >
+            What I Do
+          </Link>
+          <Link href="#about" className="hover:text-primary transition-colors">
+            About
           </Link>
           <Link href="#skills" className="hover:text-primary transition-colors">
-            Skills
-          </Link>
-          <Link href="#blog" className="hover:text-primary transition-colors">
-            Logs
+            Technology
           </Link>
           <Link
             href="#contact"
@@ -127,12 +198,15 @@ export default function Home() {
             Contact
           </Link>
         </nav>
-        <Button
-          variant="outline"
-          className="font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary"
+        <Link
+          href="mailto:hello@khan.life"
+          className={cn(
+            "font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary",
+            buttonVariants({ variant: "outline" }),
+          )}
         >
-          resume_v4.pdf
-        </Button>
+          Let&apos;s Talk <ArrowRight className="size-3" />
+        </Link>
       </Container>
 
       {/* Hero Section */}
@@ -157,48 +231,60 @@ export default function Home() {
               </span>
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
-            <h1 className="text-6xl md:text-8xl font-display tracking-tighter leading-[0.9]">
-              FULL
-              <br />
-              STACK
-              <br />
+            <h1 className="text-4xl md:text-6xl font-display tracking-tight leading-tight text-balance">
+              I build{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
-                DEV_
-              </span>
+                SaaS products
+              </span>{" "}
+              from idea to production.
             </h1>
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
-              Architecting digital voids and crafting high-performance web
-              experiences. Specialized in scalable distributed systems and
-              interactive 3D interfaces.
+              I&apos;m Dawood Khan, a full-stack developer specializing in
+              Next.js, React, TypeScript and Node.js. I build and ship SaaS
+              products, business applications and modern web experiences
+              end-to-end.
             </p>
-            <div className="flex gap-4 pt-4 items-center">
+            <div className="flex flex-wrap gap-4 pt-4 items-center">
               <Link
                 href="#projects"
                 className={cn("uppercase", buttonVariants({ size: "lg" }))}
               >
-                View projects <ArrowRight className="size-4" />
+                View my work <ArrowRight className="size-4" />
+              </Link>
+              <Link
+                href="mailto:hello@khan.life"
+                className={cn(
+                  "uppercase",
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                )}
+              >
+                Let&apos;s talk
               </Link>
               <div className="flex gap-2">
                 <Link
-                  href="#"
+                  href="https://github.com/dawood-khan-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Github className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/thedawoodkhan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="mailto:hello@khan.life"
                   className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" })
+                    buttonVariants({ variant: "ghost", size: "icon" }),
                   )}
                 >
                   <Mail className="h-5 w-5" />
@@ -254,7 +340,7 @@ export default function Home() {
       >
         <div className="grid justify-between items-end mb-16 gap-4">
           <div>
-            <h2 className="text-4xl md:text-6xl font-display tracking-tighter mb-4">
+            <h2 className="text-4xl font-display tracking-tighter mb-4">
               SELECTED
               <br />
               WORKS
@@ -262,8 +348,8 @@ export default function Home() {
             <div className="h-1 w-24 bg-primary"></div>
           </div>
           <p className="text-muted-foreground max-w-sm text-left">
-            A collection of experiments, production apps, and open source
-            contributions.
+            A selection of products and engineering projects I&apos;ve designed,
+            built and shipped — including open-source work.
           </p>
         </div>
 
@@ -297,15 +383,26 @@ export default function Home() {
                   </CardDescription>
                 </CardContent>
               </div>
-              <CardFooter className="flex justify-between pt-0">
-                <Link
-                  href={project.link}
-                  className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
-                >
-                  LIVE DEMO <ExternalLink className="size-3" />
-                </Link>
+              <CardFooter
+                className={cn(
+                  "flex pt-0",
+                  project.link ? "justify-between" : "justify-end",
+                )}
+              >
+                {project.link && (
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
+                  >
+                    LIVE DEMO <ExternalLink className="size-3" />
+                  </Link>
+                )}
                 <Link
                   href={project.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm font-display flex items-center hover:text-primary transition-colors gap-2"
                 >
                   CODE <Github className="size-3" />
@@ -313,6 +410,79 @@ export default function Home() {
               </CardFooter>
             </Card>
           ))}
+        </div>
+      </Container>
+      {/* What I Do Section */}
+      <Container
+        id="what-i-do"
+        component="section"
+        wrapperClassName="py-24 bg-secondary/20 border-t border-border"
+        className="mx-auto max-w-7xl flex-1"
+      >
+        <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+          What I Do
+        </h2>
+
+        <div className="grid gap-6 sm:grid-cols-3 mt-12">
+          {whatIDo.map((item, index) => (
+            <Card
+              key={index}
+              className="bg-card border-border hover:border-primary/50 transition-colors duration-300 rounded-none"
+            >
+              <CardHeader className="flex flex-row items-center gap-3">
+                <item.icon className="h-6 w-6 text-primary shrink-0" />
+                <CardTitle className="text-xl font-display">
+                  {item.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  {item.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Container>
+      {/* About Section */}
+      <Container
+        id="about"
+        component="section"
+        wrapperClassName="py-24 border-t border-border"
+        className="mx-auto max-w-7xl flex-1"
+      >
+        <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+          About
+        </h2>
+        <div className="max-w-3xl space-y-4 text-muted-foreground">
+          <p>
+            I&apos;m Dawood Khan, a software engineer and product builder based
+            in India, with 10+ years of experience building software.
+          </p>
+          <p>
+            Today, I focus on building SaaS products and modern web
+            applications, working across the stack from product architecture and
+            database design to frontend, backend and deployment.
+          </p>
+          <p>
+            I&apos;ve built products end-to-end, including{" "}
+            <strong className="text-foreground font-semibold">EventDesk</strong>
+            , an all-in-one SaaS platform for in-person event planners, and{" "}
+            <strong className="text-foreground font-semibold">
+              PaintMyHome
+            </strong>
+            , a marketing and lead-generation website built for an actual
+            business.
+          </p>
+          <p>
+            I enjoy working with founders and teams to turn ideas into working
+            products, whether that&apos;s an MVP, a new SaaS product, or a
+            feature that needs to be designed and engineered properly.
+          </p>
+          <p className="text-foreground font-semibold">
+            Currently available for selected freelance SaaS and web development
+            projects.
+          </p>
         </div>
       </Container>
       {/* Skills Matrix */}
@@ -324,30 +494,28 @@ export default function Home() {
       >
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <h2 className="text-4xl font-display tracking-tighter mb-6">
-              TECH_STACK
+            <h2 className="text-4xl font-display tracking-tighter mb-6 uppercase">
+              Technology
             </h2>
             <p className="text-muted-foreground mb-8">
-              My preferred weapons of choice for building digital products.
-              Always learning, always evolving.
+              The technologies I use to turn ideas into reliable,
+              production-ready digital products.
             </p>
             <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Code2 className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">CLEAN_CODE</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Database className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">SCALABLE_DB</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Cpu className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">PERFORMANCE</span>
-              </div>
-              <div className="p-4 border border-border bg-background flex flex-col items-center justify-center aspect-square hover:border-primary transition-colors">
-                <Terminal className="h-8 w-8 mb-2 text-primary" />
-                <span className="font-mono text-xs">DEVOPS</span>
-              </div>
+              {techHighlights.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-4 border border-border bg-background hover:border-primary transition-colors"
+                >
+                  <div className="flex items-start gap-2 mb-1">
+                    <item.icon className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span className="font-mono text-xs">{item.title}</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground pt-1">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
 
@@ -375,85 +543,22 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      {/* Blog Section */}
-      <Container
-        id="blog"
-        className="py-24 border-t border-border max-w-7xl mx-auto"
-      >
-        <h2 className="text-4xl font-display mb-12 uppercase">Transmissions</h2>
-
-        <div className="grid gap-8">
-          {blogPosts.map((post, index) => (
-            <Link href="#" key={index} className="group">
-              <div className="grid gap-4 md:grid-cols-[1fr_auto] items-baseline justify-between mb-2">
-                <h3 className="text-2xl font-display group-hover:text-primary transition-colors text-balance">
-                  {post.title}
-                </h3>
-                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
-                  {post.date} // {post.readTime}
-                </span>
-              </div>
-              <p className="text-muted-foreground mb-4 max-w-2xl">
-                {post.excerpt}
-              </p>
-              <div className="h-[1px] w-full bg-border group-hover:bg-primary/50 transition-colors"></div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline">VIEW ALL POSTS</Button>
-        </div>
-      </Container>
       {/* Contact Section */}
       <Container id="contact" className="py-24 bg-card border-t border-border">
-        <div className="max-w-2xl justify-self-center">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-display mb-4">INITIATE_CONTACT</h2>
-            <p className="text-muted-foreground">
-              Have a project in mind or just want to discuss the singularity?
-              Send a signal.
-            </p>
-          </div>
-
-          <form className="grid gap-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  NAME
-                </label>
-                <Input id="name" placeholder="John Doe" />
-              </div>
-              <div className="space-y-2">
-                <label
-                  htmlFor="email"
-                  className="text-xs font-mono text-muted-foreground"
-                >
-                  EMAIL
-                </label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label
-                htmlFor="message"
-                className="text-xs font-mono text-muted-foreground"
-              >
-                MESSAGE
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Enter your message..."
-                className="min-h-[150px]"
-              />
-            </div>
-            <Button type="submit" className="w-full" size="lg">
-              SEND TRANSMISSION
-            </Button>
-          </form>
+        <div className="max-w-2xl justify-self-center text-center space-y-6">
+          <h2 className="text-4xl font-display text-balance">
+            Have a SaaS idea or need help building your product?
+          </h2>
+          <p className="text-muted-foreground">
+            I&apos;m available for selected freelance projects involving SaaS
+            development and modern web applications.
+          </p>
+          <Link
+            href="mailto:hello@khan.life"
+            className={cn("uppercase", buttonVariants({ size: "lg" }))}
+          >
+            Let&apos;s talk <ArrowRight className="size-4" />
+          </Link>
         </div>
       </Container>
       {/* Footer */}
@@ -463,17 +568,24 @@ export default function Home() {
       >
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-xs font-mono text-muted-foreground">
-            © 2025 MARCUS CHEN. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} DAWOOD KHAN. ALL RIGHTS RESERVED.
           </div>
           <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="https://github.com/dawood-khan-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               GITHUB
             </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
+            <Link
+              href="https://www.linkedin.com/in/thedawoodkhan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
               LINKEDIN
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              TWITTER
             </Link>
           </div>
         </div>
