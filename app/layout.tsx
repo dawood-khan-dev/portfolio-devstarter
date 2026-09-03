@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const interDisplay = Inter({
+  variable: "--display-family",
+  weight: ["700"],
+  subsets: ["latin"],
+});
+
+const interBody = Inter({
+  variable: "--body-family",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
 const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+  variable: "--font-mono",
+  weight: ["400"],
   subsets: ["latin"],
 });
 
@@ -43,10 +51,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="scroll-smooth shadcn">
-      <body
-        className={`font-body antialiased ${spaceGrotesk.variable} ${jetBrainsMono.variable}`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`scroll-smooth shadcn ${interDisplay.variable} ${interBody.variable} ${jetBrainsMono.variable}`}
+    >
+      <body className="font-body antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

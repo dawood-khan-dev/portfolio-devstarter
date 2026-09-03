@@ -201,7 +201,7 @@ export default function Home() {
         <Link
           href="mailto:hello@khan.life"
           className={cn(
-            "font-mono text-xs border-primary/50 hover:bg-primary/10 hover:text-primary hover:border-primary",
+            "font-mono text-xs border-primary/50 hover:bg-primary/10! hover:text-primary! hover:border-primary!",
             buttonVariants({ variant: "outline" }),
           )}
         >
@@ -254,7 +254,7 @@ export default function Home() {
               <Link
                 href="mailto:hello@khan.life"
                 className={cn(
-                  "uppercase",
+                  "uppercase hover:bg-primary/10! hover:text-primary! hover:border-primary!",
                   buttonVariants({ variant: "outline", size: "lg" }),
                 )}
               >
