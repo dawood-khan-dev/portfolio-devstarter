@@ -66,7 +66,7 @@ export default function Home() {
       description:
         "An open-source PostgreSQL library for implementing secure multi-tenant data isolation with Row-Level Security (RLS), designed for SaaS applications using Prisma.",
       tags: ["PostgreSQL", "RLS", "Multi-Tenancy", "Prisma", "Open Source"],
-      image: "/project-placeholder-2.jpg",
+      image: "/postgres_rls_without_text.png",
       link: null,
       repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
     },
@@ -343,7 +343,7 @@ export default function Home() {
             <h2 className="text-4xl font-display tracking-tighter mb-4">
               SELECTED
               <br />
-              WORKS
+              WORK
             </h2>
             <div className="h-1 w-24 bg-primary"></div>
           </div>
@@ -479,10 +479,14 @@ export default function Home() {
             products, whether that&apos;s an MVP, a new SaaS product, or a
             feature that needs to be designed and engineered properly.
           </p>
-          <p className="text-foreground font-semibold">
-            Currently available for selected freelance SaaS and web development
-            projects.
-          </p>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary font-normal">
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            Currently available for selected freelance SaaS and web
+            development projects.
+          </div>
         </div>
       </Container>
       {/* Skills Matrix */}
