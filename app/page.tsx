@@ -41,7 +41,7 @@ export default function Home() {
         "PostgreSQL",
         "Prisma",
       ],
-      image: "/eventdesk_dashboard.png",
+      image: "/home/eventdesk_dashboard.png",
       link: "https://app.eventdesk.io",
       repo: "https://github.com/dawood-khan-dev/eventdesk",
       caseStudyUrl: "/work/eventdesk",
@@ -58,7 +58,7 @@ export default function Home() {
         "shadcn",
         "Basehub",
       ],
-      image: "/paintmyhome_screenshot.png",
+      image: "/home/paintmyhome_screenshot.png",
       link: "https://paintmyhome.in",
       repo: "https://github.com/dawood-khan-dev/paintmyhome_v0.1",
       caseStudyUrl: null,
@@ -68,7 +68,7 @@ export default function Home() {
       description:
         "An open-source PostgreSQL library for implementing secure multi-tenant data isolation with Row-Level Security (RLS), designed for SaaS applications using Prisma.",
       tags: ["PostgreSQL", "RLS", "Multi-Tenancy", "Prisma", "Open Source"],
-      image: "/postgres_rls_without_text.png",
+      image: "/home/postgres_rls_without_text.png",
       link: null,
       repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
       caseStudyUrl: null,
@@ -148,7 +148,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-[100vw] h-[100vh] bg-background overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/home/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>

@@ -75,7 +75,7 @@ export default function EventDeskPage() {
       >
         <div className="relative aspect-video overflow-hidden border border-border bg-card">
           <Image
-            src="/eventdesk_dashboard.png"
+            src="/home/eventdesk_dashboard.png"
             alt="EventDesk dashboard"
             fill
             className="object-cover"
