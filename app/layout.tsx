@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -58,7 +60,11 @@ export default function RootLayout({
     >
       <body className="font-body antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+            <SiteHeader />
+            {children}
+            <SiteFooter />
+          </div>
         </ThemeProvider>
       </body>
     </html>
