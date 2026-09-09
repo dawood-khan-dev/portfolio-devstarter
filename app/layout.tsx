@@ -60,7 +60,7 @@ export default function RootLayout({
     >
       <body className="font-body antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
+          <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
             <SiteHeader />
             {children}
             <SiteFooter />
