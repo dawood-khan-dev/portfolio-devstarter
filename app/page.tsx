@@ -61,7 +61,7 @@ export default function Home() {
       image: "/home/paintmyhome_screenshot.png",
       link: "https://paintmyhome.in",
       repo: "https://github.com/dawood-khan-dev/paintmyhome_v0.1",
-      caseStudyUrl: null,
+      caseStudyUrl: "/work/paintmyhome",
     },
     {
       title: "Multi-Tenant PostgreSQL RLS",
