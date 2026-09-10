@@ -4,13 +4,19 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-interface SectionNavItem {
+interface ScrollSpyNavItem {
   id: string;
   label: string;
 }
 
-export function SectionNav({ items }: { items: SectionNavItem[] }) {
-  const [active, setActive] = useState(items[0]?.id);
+export function ScrollSpyNav({
+  items,
+  basePath = "",
+}: {
+  items: ScrollSpyNavItem[];
+  basePath?: string;
+}) {
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,7 +44,7 @@ export function SectionNav({ items }: { items: SectionNavItem[] }) {
       {items.map((item) => (
         <Link
           key={item.id}
-          href={`#${item.id}`}
+          href={`${basePath}#${item.id}`}
           className={cn(
             "whitespace-nowrap transition-colors hover:text-primary",
             active === item.id ? "text-primary" : "text-muted-foreground",

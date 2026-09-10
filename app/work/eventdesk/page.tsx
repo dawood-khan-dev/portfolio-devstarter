@@ -5,7 +5,7 @@ import { Container } from "@/components/zippystarter/container";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { SectionNav } from "@/components/case-study/section-nav";
+import { ScrollSpyNav } from "@/components/scroll-spy-nav";
 import { CaseStudyAccordion } from "@/components/case-study/case-study-accordion";
 import type { Metadata } from "next";
 
@@ -648,7 +648,7 @@ export default function EventDeskPage() {
         wrapperClassName="sticky top-16 z-40 bg-background/80 backdrop-blur-md border-b border-border"
         className="mx-auto max-w-5xl flex gap-6 overflow-x-auto py-3 text-xs font-mono uppercase tracking-wider"
       >
-        <SectionNav items={sectionNav} />
+        <ScrollSpyNav items={sectionNav} />
       </Container>
 
       <Container

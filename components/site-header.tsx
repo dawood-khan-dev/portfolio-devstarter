@@ -1,8 +1,17 @@
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 import { Container } from "@/components/zippystarter/container";
+import { ScrollSpyNav } from "@/components/scroll-spy-nav";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+
+const navItems = [
+  { id: "projects", label: "Work" },
+  { id: "what-i-do", label: "What I Do" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Technology" },
+  { id: "contact", label: "Contact" },
+];
 
 export function SiteHeader() {
   return (
@@ -34,28 +43,8 @@ export function SiteHeader() {
           Dawood<span className="text-primary">_</span>Khan
         </span>
       </Link>
-      <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
-        <Link
-          href="/#projects"
-          className="hover:text-primary transition-colors"
-        >
-          Work
-        </Link>
-        <Link
-          href="/#what-i-do"
-          className="hover:text-primary transition-colors"
-        >
-          What I Do
-        </Link>
-        <Link href="/#about" className="hover:text-primary transition-colors">
-          About
-        </Link>
-        <Link href="/#skills" className="hover:text-primary transition-colors">
-          Technology
-        </Link>
-        <Link href="/#contact" className="hover:text-primary transition-colors">
-          Contact
-        </Link>
+      <nav className="hidden md:flex gap-8 text-sm font-medium">
+        <ScrollSpyNav items={navItems} basePath="/" />
       </nav>
       <Link
         href="mailto:hello@khan.life"
