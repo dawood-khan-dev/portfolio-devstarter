@@ -41,9 +41,10 @@ export default function Home() {
         "PostgreSQL",
         "Prisma",
       ],
-      image: "/eventdesk_dashboard.png",
+      image: "/home/eventdesk_dashboard.png",
       link: "https://app.eventdesk.io",
       repo: "https://github.com/dawood-khan-dev/eventdesk",
+      caseStudyUrl: "/work/eventdesk",
     },
     {
       title: "PaintMyHome",
@@ -57,18 +58,20 @@ export default function Home() {
         "shadcn",
         "Basehub",
       ],
-      image: "/paintmyhome_screenshot.png",
+      image: "/home/paintmyhome_screenshot.png",
       link: "https://paintmyhome.in",
       repo: "https://github.com/dawood-khan-dev/paintmyhome_v0.1",
+      caseStudyUrl: "/work/paintmyhome",
     },
     {
       title: "Multi-Tenant PostgreSQL RLS",
       description:
         "An open-source PostgreSQL library for implementing secure multi-tenant data isolation with Row-Level Security (RLS), designed for SaaS applications using Prisma.",
       tags: ["PostgreSQL", "RLS", "Multi-Tenancy", "Prisma", "Open Source"],
-      image: "/postgres_rls_without_text.png",
+      image: "/home/postgres_rls_without_text.png",
       link: null,
       repo: "https://github.com/dawood-khan-dev/multitenant-postgres-rls",
+      caseStudyUrl: null,
     },
   ];
 
@@ -122,93 +125,21 @@ export default function Home() {
 
   const skills = [
     {
-      category: "Frontend",
-      items: [
-        "Next.js",
-        "React",
-        "Tailwind CSS",
-        "shadcn/ui",
-        "Responsive UI",
-      ],
+      category: "Frontend Development",
+      items: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Responsive UI"],
     },
     {
-      category: "Backend",
+      category: "Backend Development",
       items: ["Node.js", "PostgreSQL", "Prisma", "REST APIs", "Typescript"],
     },
     {
-      category: "Integrations",
+      category: "SaaS Services & Integrations",
       items: ["Clerk", "Stripe", "PostHog", "Resend", "Better Stack"],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground overflow-x-hidden">
-      {/* Navigation / Header */}
-      <Container
-        component="header"
-        wrapperClassName="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border"
-        className="mx-auto max-w-7xl flex items-center justify-between h-16 uppercase"
-      >
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-3xl font-bold font-mono tracking-tighter"
-        >
-          <span
-            role="img"
-            aria-label="Logo"
-            className="inline-block h-6 aspect-2436/1216 bg-foreground"
-            style={{
-              WebkitMaskImage: "url(/logo.svg)",
-              maskImage: "url(/logo.svg)",
-              WebkitMaskRepeat: "no-repeat",
-              maskRepeat: "no-repeat",
-              WebkitMaskSize: "contain",
-              maskSize: "contain",
-              WebkitMaskPosition: "center",
-              maskPosition: "center",
-            }}
-          />
-          <span>
-            Dawood<span className="text-primary">_</span>Khan
-          </span>
-        </Link>
-        <nav className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground ">
-          <Link
-            href="#projects"
-            className="hover:text-primary transition-colors"
-          >
-            Work
-          </Link>
-          <Link
-            href="#what-i-do"
-            className="hover:text-primary transition-colors"
-          >
-            What I Do
-          </Link>
-          <Link href="#about" className="hover:text-primary transition-colors">
-            About
-          </Link>
-          <Link href="#skills" className="hover:text-primary transition-colors">
-            Technology
-          </Link>
-          <Link
-            href="#contact"
-            className="hover:text-primary transition-colors"
-          >
-            Contact
-          </Link>
-        </nav>
-        <Link
-          href="mailto:hello@khan.life"
-          className={cn(
-            "font-mono text-xs border-primary/50 hover:bg-primary/10! hover:text-primary! hover:border-primary!",
-            buttonVariants({ variant: "outline" }),
-          )}
-        >
-          Let&apos;s Talk <ArrowRight className="size-3" />
-        </Link>
-      </Container>
-
+    <>
       {/* Hero Section */}
       <Container
         wrapperClassName="relative min-h-screen flex items-center pt-16 overflow-hidden"
@@ -217,7 +148,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <div className="relative w-[100vw] h-[100vh] bg-background overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/hero-bg.jpg')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
+            <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-[url('/home/hero-bg.webp')] before:absolute before:inset-0 before:bg-primary before:mix-blend-color-dodge dark:before:mix-blend-color" />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background" />
         </div>
@@ -232,11 +163,11 @@ export default function Home() {
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
             <h1 className="text-4xl md:text-6xl font-display tracking-tight leading-tight text-balance">
-              I build{" "}
+              Full-Stack{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
-                SaaS products
+                SaaS Developer
               </span>{" "}
-              from idea to production.
+              Building Products from Idea to Production
             </h1>
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
               I&apos;m Dawood Khan, a full-stack developer specializing in
@@ -340,10 +271,8 @@ export default function Home() {
       >
         <div className="grid justify-between items-end mb-16 gap-4">
           <div>
-            <h2 className="text-4xl font-display tracking-tighter mb-4">
-              SELECTED
-              <br />
-              WORK
+            <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+              Selected Work
             </h2>
             <div className="h-1 w-24 bg-primary"></div>
           </div>
@@ -359,11 +288,21 @@ export default function Home() {
               key={index}
               className="pt-0 group bg-card border-border hover:border-primary/50 transition-all duration-300 rounded-none overflow-hidden grid grid-rows-subgrid row-span-3 content-start items-start"
             >
-              <ProjectImage src={project.image} alt={project.title} />
+              {project.caseStudyUrl ? (
+                <Link href={project.caseStudyUrl}>
+                  <ProjectImage src={project.image} alt={project.title} />
+                </Link>
+              ) : (
+                <ProjectImage src={project.image} alt={project.title} />
+              )}
               <div className="grid gap-4">
                 <CardHeader className="grid gap-4">
                   <CardTitle className="text-2xl font-display group-hover:text-primary transition-colors">
-                    {project.title}
+                    {project.caseStudyUrl ? (
+                      <Link href={project.caseStudyUrl}>{project.title}</Link>
+                    ) : (
+                      project.title
+                    )}
                   </CardTitle>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
@@ -420,7 +359,7 @@ export default function Home() {
         className="mx-auto max-w-7xl flex-1"
       >
         <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
-          What I Do
+          SaaS &amp; Full-Stack Development Services
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-3 mt-12">
@@ -484,8 +423,8 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Currently available for selected freelance SaaS and web
-            development projects.
+            Currently available for selected freelance SaaS and web development
+            projects.
           </div>
         </div>
       </Container>
@@ -499,7 +438,7 @@ export default function Home() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <h2 className="text-4xl font-display tracking-tighter mb-6 uppercase">
-              Technology
+              Technology &amp; Engineering Expertise
             </h2>
             <p className="text-muted-foreground mb-8">
               The technologies I use to turn ideas into reliable,
@@ -551,7 +490,7 @@ export default function Home() {
       <Container id="contact" className="py-24 bg-card border-t border-border">
         <div className="max-w-2xl justify-self-center text-center space-y-6">
           <h2 className="text-4xl font-display text-balance">
-            Have a SaaS idea or need help building your product?
+            Need Help Building Your SaaS Product?
           </h2>
           <p className="text-muted-foreground">
             I&apos;m available for selected freelance projects involving SaaS
@@ -565,35 +504,6 @@ export default function Home() {
           </Link>
         </div>
       </Container>
-      {/* Footer */}
-      <Container
-        component="footer"
-        className="py-8 border-t border-border bg-background text-center max-w-7xl mx-auto"
-      >
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-xs font-mono text-muted-foreground">
-            © {new Date().getFullYear()} DAWOOD KHAN. ALL RIGHTS RESERVED.
-          </div>
-          <div className="flex gap-6 text-xs font-mono text-muted-foreground">
-            <Link
-              href="https://github.com/dawood-khan-dev"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              GITHUB
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/thedawoodkhan/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-colors"
-            >
-              LINKEDIN
-            </Link>
-          </div>
-        </div>
-      </Container>
-    </div>
+    </>
   );
 }
