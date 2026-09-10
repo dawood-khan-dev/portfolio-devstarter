@@ -7,6 +7,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ScrollSpyNav } from "@/components/scroll-spy-nav";
 import { CaseStudyAccordion } from "@/components/case-study/case-study-accordion";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 function DecisionField({
@@ -26,10 +27,23 @@ function DecisionField({
   );
 }
 
+const title = "EventDesk — SaaS Product Case Study | Dawood Khan";
+const description =
+  "How I designed and built EventDesk, an all-in-one SaaS platform for in-person event planners, from architecture and multi-tenancy to production deployment.";
+
 export const metadata: Metadata = {
-  title: "EventDesk — Dawood Khan",
-  description:
-    "An all-in-one SaaS platform for in-person event planners, combining task management, budgets, CRM, invoices, expenses and event operations in one place.",
+  title,
+  description,
+  alternates: {
+    canonical: `${SITE_URL}/work/eventdesk`,
+  },
+  openGraph: {
+    title,
+    description,
+    url: `${SITE_URL}/work/eventdesk`,
+    siteName: "Dawood Khan",
+    images: "/work/eventdesk/og.jpg",
+  },
 };
 
 export default function EventDeskPage() {
@@ -50,13 +64,13 @@ export default function EventDeskPage() {
       image: "/work/eventdesk/tasks.png",
     },
     {
-      title: "Budget & Finance",
+      title: "Budget & Financial Management",
       description:
         "Manage budgets, expenses, bills and invoices throughout the event lifecycle.",
       image: "/work/eventdesk/bills.png",
     },
     {
-      title: "CRM",
+      title: "CRM for Clients, Leads & Vendors",
       description:
         "Manage leads, clients and vendors alongside the events they're connected to.",
       image: "/work/eventdesk/leads.png",
@@ -65,7 +79,7 @@ export default function EventDeskPage() {
 
   const responsibilityGroups = [
     {
-      group: "Product & Engineering",
+      group: "Product Architecture & Engineering",
       items: [
         {
           label: "Product Architecture",
@@ -90,7 +104,7 @@ export default function EventDeskPage() {
       ],
     },
     {
-      group: "Data & Security",
+      group: "Data, Security & Multi-tenancy",
       items: [
         {
           label: "Database",
@@ -180,7 +194,7 @@ export default function EventDeskPage() {
     {
       id: "challenge-1",
       number: "01",
-      title: "Production Deployment",
+      title: "Production Deployment with Next.js & Prisma",
       content: (
         <div className="space-y-4">
           <p>
@@ -294,7 +308,7 @@ export default function EventDeskPage() {
     {
       id: "challenge-5",
       number: "05",
-      title: "Complex UI State",
+      title: "Complex UI State Management",
       content: (
         <div className="space-y-4">
           <p>
@@ -390,7 +404,7 @@ export default function EventDeskPage() {
     {
       id: "decision-2",
       number: "02",
-      title: "PostgreSQL + Prisma",
+      title: "PostgreSQL & Prisma",
       content: (
         <div className="space-y-6">
           <DecisionField label="Decision">
@@ -584,7 +598,10 @@ export default function EventDeskPage() {
               Case Study
             </Badge>
             <h1 className="text-5xl md:text-6xl font-display tracking-tight mb-4">
-              EventDesk
+              EventDesk{" "}
+              <span className="text-muted-foreground text-3xl md:text-4xl">
+                — SaaS Product Case Study
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mb-8">
               An all-in-one SaaS platform for in-person event planners.
@@ -725,7 +742,7 @@ export default function EventDeskPage() {
         wrapperClassName="py-16 border-b border-border"
         className="mx-auto max-w-5xl"
       >
-        <h2 className="text-2xl font-display text-foreground mb-2">My Role</h2>
+        <h2 className="text-2xl font-display text-foreground mb-2">My Role in Building EventDesk</h2>
         <div className="space-y-4 text-muted-foreground mb-12">
           <p className="border-l-2 border-primary pl-4 text-lg text-foreground italic">
             I designed and built EventDesk end-to-end.
@@ -746,9 +763,9 @@ export default function EventDeskPage() {
               key={group.group}
               className="border-l-2 border-primary/30 pl-4"
             >
-              <h4 className="font-mono text-sm text-primary mb-4">
+              <h3 className="font-mono text-sm text-primary mb-4">
                 {group.group}
-              </h4>
+              </h3>
               <dl className="space-y-4">
                 {group.items.map((item) => (
                   <div key={item.label}>
@@ -773,7 +790,7 @@ export default function EventDeskPage() {
         className="mx-auto max-w-5xl"
       >
         <h2 className="text-2xl font-display text-foreground mb-2">
-          Architecture
+          EventDesk Architecture
         </h2>
         <div className="space-y-4 text-muted-foreground mb-8">
           <p>
@@ -792,9 +809,12 @@ export default function EventDeskPage() {
         <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-4">
           Core Architecture
         </div>
-        <dl className="sm:columns-2 gap-x-8 mb-12 border-l-2 border-primary/30 pl-4">
+        <dl className="sm:columns-2 gap-x-8 mb-12">
           {architectureItems.map((item) => (
-            <div key={item.label} className="mb-6 break-inside-avoid">
+            <div
+              key={item.label}
+              className="mb-6 break-inside-avoid border-l-2 border-primary/30 pl-4"
+            >
               <dt className="font-mono text-sm text-foreground font-semibold mb-1">
                 {item.label}
               </dt>

@@ -125,15 +125,15 @@ export default function Home() {
 
   const skills = [
     {
-      category: "Frontend",
+      category: "Frontend Development",
       items: ["Next.js", "React", "Tailwind CSS", "shadcn/ui", "Responsive UI"],
     },
     {
-      category: "Backend",
+      category: "Backend Development",
       items: ["Node.js", "PostgreSQL", "Prisma", "REST APIs", "Typescript"],
     },
     {
-      category: "Integrations",
+      category: "SaaS Services & Integrations",
       items: ["Clerk", "Stripe", "PostHog", "Resend", "Better Stack"],
     },
   ];
@@ -163,11 +163,11 @@ export default function Home() {
               SYSTEM ONLINE // AVAILABLE FOR HIRE
             </div>
             <h1 className="text-4xl md:text-6xl font-display tracking-tight leading-tight text-balance">
-              I build{" "}
+              Full-Stack{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-foreground">
-                SaaS products
+                SaaS Developer
               </span>{" "}
-              from idea to production.
+              Building Products from Idea to Production
             </h1>
             <p className="md:text-xl text-muted-foreground max-w-md leading-relaxed">
               I&apos;m Dawood Khan, a full-stack developer specializing in
@@ -271,10 +271,8 @@ export default function Home() {
       >
         <div className="grid justify-between items-end mb-16 gap-4">
           <div>
-            <h2 className="text-4xl font-display tracking-tighter mb-4">
-              SELECTED
-              <br />
-              WORK
+            <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
+              Selected Work
             </h2>
             <div className="h-1 w-24 bg-primary"></div>
           </div>
@@ -361,7 +359,7 @@ export default function Home() {
         className="mx-auto max-w-7xl flex-1"
       >
         <h2 className="text-4xl font-display tracking-tighter mb-4 uppercase">
-          What I Do
+          SaaS &amp; Full-Stack Development Services
         </h2>
 
         <div className="grid gap-6 sm:grid-cols-3 mt-12">
@@ -440,7 +438,7 @@ export default function Home() {
         <div className="grid md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <h2 className="text-4xl font-display tracking-tighter mb-6 uppercase">
-              Technology
+              Technology &amp; Engineering Expertise
             </h2>
             <p className="text-muted-foreground mb-8">
               The technologies I use to turn ideas into reliable,
@@ -492,7 +490,7 @@ export default function Home() {
       <Container id="contact" className="py-24 bg-card border-t border-border">
         <div className="max-w-2xl justify-self-center text-center space-y-6">
           <h2 className="text-4xl font-display text-balance">
-            Have a SaaS idea or need help building your product?
+            Need Help Building Your SaaS Product?
           </h2>
           <p className="text-muted-foreground">
             I&apos;m available for selected freelance projects involving SaaS

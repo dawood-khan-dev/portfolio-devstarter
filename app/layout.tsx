@@ -3,6 +3,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const interDisplay = Inter({
@@ -32,17 +33,20 @@ const siteUrl =
 
 const title = "Dawood Khan — Full-Stack SaaS Developer";
 const description =
-  "I build SaaS products and modern web applications with Next.js, React, TypeScript and Node.js.";
+  "Full-stack SaaS developer specializing in Next.js, React, TypeScript and Node.js. I build SaaS products and modern web applications from idea to production.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     title,
     description,
     url: "./",
-    siteName: title,
+    siteName: "Dawood Khan",
     images: "/og.jpg",
   },
 };

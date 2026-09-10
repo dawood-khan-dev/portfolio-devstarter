@@ -7,12 +7,26 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ScrollSpyNav } from "@/components/scroll-spy-nav";
 import { ZoomableImage } from "@/components/case-study/zoomable-image";
+import { SITE_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
+const title = "PaintMyHome — SEO & Lead Generation Website | Dawood Khan";
+const description =
+  "How I designed and built PaintMyHome, a responsive marketing and lead-generation website for a home painting business, focused on SEO, service discovery and quote requests.";
+
 export const metadata: Metadata = {
-  title: "PaintMyHome — Dawood Khan",
-  description:
-    "A modern marketing and lead-generation website built for a home painting business.",
+  title,
+  description,
+  alternates: {
+    canonical: `${SITE_URL}/work/paintmyhome`,
+  },
+  openGraph: {
+    title,
+    description,
+    url: `${SITE_URL}/work/paintmyhome`,
+    siteName: "Dawood Khan",
+    images: "/work/paintmyhome/og.jpg",
+  },
 };
 
 export default function PaintMyHomePage() {
@@ -83,7 +97,7 @@ export default function PaintMyHomePage() {
       image: "/work/paintmyhome/hero.png",
     },
     {
-      title: "Service & CTA Sections",
+      title: "Services & Conversion Paths",
       description:
         "Service pages and supporting sections are structured to help visitors understand the offering before presenting an appropriate next action.",
       image: "/work/paintmyhome/services.png",
@@ -101,12 +115,12 @@ export default function PaintMyHomePage() {
 
   const technicalSections = [
     {
-      title: "Frontend",
+      title: "Next.js & Frontend Development",
       description:
         "The interface was implemented using reusable components and responsive layouts, allowing common patterns such as service sections, CTAs, forms and content blocks to remain consistent across the website.",
     },
     {
-      title: "CMS",
+      title: "CMS & Content Management",
       description:
         "Content is managed through a CMS, separating the content layer from the application code. This makes it possible to expand services, guides and other SEO-focused content without requiring every content change to be implemented as a code change.",
     },
@@ -127,7 +141,10 @@ export default function PaintMyHomePage() {
               Case Study
             </Badge>
             <h1 className="text-5xl md:text-6xl font-display tracking-tight mb-4">
-              PaintMyHome
+              PaintMyHome{" "}
+              <span className="text-muted-foreground text-3xl md:text-4xl">
+                — SEO & Lead Generation Website
+              </span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8">
               A modern marketing and lead-generation website built for a home
@@ -260,7 +277,7 @@ export default function PaintMyHomePage() {
         wrapperClassName="py-16 border-b border-border"
         className="mx-auto max-w-5xl"
       >
-        <h2 className="text-2xl font-display text-foreground mb-2">My Role</h2>
+        <h2 className="text-2xl font-display text-foreground mb-2">My Role in Building PaintMyHome</h2>
         <p className="border-l-2 border-primary pl-4 text-lg text-foreground italic mb-8">
           I designed and built PaintMyHome end-to-end, covering the product
           experience, frontend implementation and technical foundation.
@@ -336,7 +353,7 @@ export default function PaintMyHomePage() {
         wrapperClassName="py-16 border-b border-border bg-secondary/20"
         className="mx-auto max-w-5xl"
       >
-        <h2 className="text-2xl font-display text-foreground mb-2">Design</h2>
+        <h2 className="text-2xl font-display text-foreground mb-2">Website Design &amp; User Experience</h2>
         <div className="space-y-4 text-muted-foreground mb-8">
           <p>
             The visual design focuses on clarity, trust and conversion rather
@@ -352,11 +369,11 @@ export default function PaintMyHomePage() {
         <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-4">
           Key Design Considerations
         </div>
-        <ul className="sm:columns-2 gap-x-8 mb-16 border-l-2 border-primary/30 pl-4">
+        <ul className="sm:columns-2 gap-x-8 mb-16">
           {designConsiderations.map((item) => (
             <li
               key={item}
-              className="mb-2 break-inside-avoid text-sm text-muted-foreground"
+              className="mb-2 break-inside-avoid text-sm text-muted-foreground border-l-2 border-primary/30 pl-4"
             >
               {item}
             </li>
@@ -461,7 +478,7 @@ export default function PaintMyHomePage() {
           ))}
 
           <div>
-            <h3 className="text-xl font-display text-foreground mb-2">SEO</h3>
+            <h3 className="text-xl font-display text-foreground mb-2">Search Engine Optimization</h3>
             <p className="text-muted-foreground mb-4">
               SEO was treated as part of the website architecture rather than an
               afterthought.
@@ -469,11 +486,11 @@ export default function PaintMyHomePage() {
             <p className="text-muted-foreground mb-4">
               The structure supports:
             </p>
-            <ul className="sm:columns-2 gap-x-8 mb-4 border-l-2 border-primary/30 pl-4">
+            <ul className="sm:columns-2 gap-x-8 mb-4">
               {seoPoints.map((point) => (
                 <li
                   key={point}
-                  className="mb-2 break-inside-avoid text-sm text-muted-foreground"
+                  className="mb-2 break-inside-avoid text-sm text-muted-foreground border-l-2 border-primary/30 pl-4"
                 >
                   {point}
                 </li>
@@ -487,7 +504,7 @@ export default function PaintMyHomePage() {
 
           <div>
             <h3 className="text-xl font-display text-foreground mb-2">
-              Forms &amp; Integrations
+              Lead Generation Forms &amp; Integrations
             </h3>
             <div className="text-muted-foreground space-y-4">
               <p>
@@ -506,7 +523,7 @@ export default function PaintMyHomePage() {
 
           <div>
             <h3 className="text-xl font-display text-foreground mb-2">
-              Deployment
+              Production Deployment
             </h3>
             <p className="text-muted-foreground">
               The application is deployed to production using a modern Next.js

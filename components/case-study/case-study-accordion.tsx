@@ -31,7 +31,7 @@ export function CaseStudyAccordion({
             <span className="flex items-baseline gap-3">
               <span className="font-mono text-sm text-primary">
                 {item.number}
-              </span>
+              </span>{" "}
               <span className="text-xl font-display text-foreground">
                 {item.title}
               </span>
